@@ -4,7 +4,12 @@ import Form from "./Form";
 import "./App.css";
 
 function App() {
-  return <Form />;
+  return(
+    <>
+    <h1>CatPik</h1>
+    <Form />
+    </>
+  );
 }
 
 export default App;
