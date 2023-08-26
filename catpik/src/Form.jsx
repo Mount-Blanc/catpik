@@ -8,6 +8,8 @@ function Form() {
 
     <label>Password</label>
     <input placeholder='Enter Password'/>
+
+    <button type='submit'>Submit</button>
   </form>
   )
 }
