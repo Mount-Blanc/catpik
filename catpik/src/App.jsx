@@ -1,14 +1,10 @@
-import React from 'react';
-import Form from './Form';
+import React from "react";
+import Form from "./Form";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-
-  return (
-    <Form/>
-
-    )
+  return <Form />;
 }
 
-export default App
+export default App;

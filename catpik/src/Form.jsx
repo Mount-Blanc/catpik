@@ -1,17 +1,20 @@
-import React from 'react'
+import React from "react";
+import "./Form.css";
 
 function Form() {
   return (
-    <form>
-    <label>Username</label>
-    <input placeholder='Enter Username'/>
+    <div className="form-container">
+      <form>
+        <label>Username</label>
+        <input placeholder="Enter Username" />
 
-    <label>Password</label>
-    <input placeholder='Enter Password'/>
+        <label>Password</label>
+        <input placeholder="Enter Password" />
 
-    <button type='submit'>Submit</button>
-  </form>
-  )
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
 
-export default Form
+export default Form;
