@@ -21,9 +21,13 @@ test ('renders two inputs', () => {
 
     });
 
-
+    const password = screen.getByRole('textbox', {
+        name:/password/i
+    })
 
     expect(username).toBeInTheDocument();
+    expect(password).toBeInTheDocument();
+
 
 
 })
