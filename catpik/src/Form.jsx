@@ -5,13 +5,15 @@ function Form() {
   return (
     <div className="form-container">
       <form>
-        <label>Username</label>
-        <input placeholder="Enter Username" />
+        <div className="form-wrapper">
+          <label>Username</label>
+          <input placeholder="Enter Username" />
 
-        <label>Password</label>
-        <input placeholder="Enter Password" />
+          <label>Password</label>
+          <input placeholder="Enter Password" />
 
-        <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );
