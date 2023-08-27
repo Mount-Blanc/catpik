@@ -1,16 +1,15 @@
 import React from "react";
-import "./Form.css";
 
 function Form() {
   return (
     <div className="form-container">
       <form>
         <div className="form-wrapper">
-          <label>Username</label>
-          <input placeholder="Enter Username" />
+          <label htmlFor="username">Username</label>
+          <input id="username" placeholder="Enter Username" />
 
-          <label>Password</label>
-          <input placeholder="Enter Password" />
+          <label htmlFor="password">Password</label>
+          <input id="password" placeholder="Enter Password" />
 
           <button type="submit">Submit</button>
         </div>
