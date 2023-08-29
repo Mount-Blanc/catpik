@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Form from './Form';
+import Login from './Login.jsx';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
 test ('renders submit button' , () => {
-    render(<Form/>)
+    render(<Login/>)
 
     const button =screen.getByRole('button')
 
@@ -14,7 +14,7 @@ test ('renders submit button' , () => {
 
 })
 test ('renders two inputs', () => {
-    render(<Form/>)
+    render(<Login/>)
 
     const username= screen.getByRole('textbox', {
         name:/username/i
