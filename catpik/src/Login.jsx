@@ -1,5 +1,5 @@
 import React from "react";
-import './Login.css'
+import './Form.css'
 function Login() {
   return (
     <div className="form-container">
