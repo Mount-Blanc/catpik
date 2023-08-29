@@ -1,6 +1,6 @@
 import React from "react";
-import './Form.css'
-function Form() {
+import './Login.css'
+function Login() {
   return (
     <div className="form-container">
       <form>
@@ -18,4 +18,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default Login;
