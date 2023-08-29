@@ -1,14 +1,14 @@
 import React from "react";
-import Form from "./Form";
+import Form from './Form';
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import ErrorPage from './ErrorPage';
 
-import "./App.css";
 
 function App() {
   return(
-    <>
-    <h1>CatPik</h1>
-    <Form />
-    </>
+     <Routes>
+        <Route path="/" errorElement={<ErrorPage/>} element={<Form/>} />
+      </Routes>
   );
 }
 
