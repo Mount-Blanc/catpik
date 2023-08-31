@@ -3,12 +3,18 @@ const session = require('express-session');
 const app = express();
 const port = 3000;
 const authRoute= require('./routes/authRoutes')
+const cors = require('cors'); // Import the 'cors' package
+const authController = require('./controller/authController')
 
-app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
+app.use(express.json())
 app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: true }));
 
 
-app.route('/login',authRoute)
+app.use('/', authRoute);
+app.post('/register',authController.postRegister)
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
