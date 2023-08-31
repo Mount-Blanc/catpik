@@ -10,7 +10,6 @@ import './App.css'
 function App() {
   return(
     <>
-    <h1>CatPik</h1>
      <Routes>
       <Route path='/' errorElement={<ErrorPage/>} element={<Root/>} />
         <Route path="/Login" errorElement={<ErrorPage/>} element={<Login/>} />,
