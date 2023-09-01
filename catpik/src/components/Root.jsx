@@ -1,11 +1,13 @@
 import React from "react";
 import './Root.css'
+import { Link } from "react-router-dom";
+
 function Root() {
   return (
     <div>
       <h1>Welcome to Catpik</h1>
-      <a className="root-button" href="/login">Login</a>
-      < a className="root-button" href="/register">Register</a>
+      <Link className="root-button" to='./Login'>Login</Link>    
+      <Link className="root-button" to="./register">Register</Link>
     </div>
   );
 }
