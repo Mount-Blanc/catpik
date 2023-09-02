@@ -18,6 +18,11 @@ exports.postRegister = (req, res, next) => {
 };
 
 
+exports.login = (req,res) => {
+  console.log(req.body)
+}
+
+
 exports.logout = (req, res) => {
   req.session.destroy((err) => {
     if (err) {
