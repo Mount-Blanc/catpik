@@ -20,6 +20,7 @@ exports.postRegister = (req, res, next) => {
 
 exports.login = (req,res) => {
   console.log(req.body)
+  res.status(200).json({message:"Login Successful"})
 }
 
 
