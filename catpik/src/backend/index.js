@@ -14,7 +14,7 @@ app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: t
 
 app.use('/', authRoute);
 app.post('/register',authController.postRegister)
-
+app.get('/logout', authController.logout)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
