@@ -2,11 +2,13 @@ import React from 'react'
 import "./Form.css"
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
 const [username, setusername] = useState()
 const [password, setpassword] = useState()
 
+const navigate = useNavigate();
 
   const handleSubmit  =async (e) => {
     e.preventDefault();
@@ -31,6 +33,10 @@ const [password, setpassword] = useState()
     setpassword(e.target.value)
   };
 
+  const handleRedirect= () => {
+    navigate('/dashboard', { replace: true });
+    }
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -41,7 +47,7 @@ const [password, setpassword] = useState()
           <label htmlFor="password">Password</label>
           <input onChange={handlePasswordChange} id="password" placeholder="Choose Password..." />
 
-          <button type="submit">Register</button>
+          <button onClick={handleRedirect} type="submit">Register</button>
         </div>
       </form>
     </div>

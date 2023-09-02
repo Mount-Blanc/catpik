@@ -5,6 +5,7 @@ import ErrorPage from './components/ErrorPage';
 import Register from "./components/Register";
 import Root from './components/Root';
 import './App.css'
+import Dashboard from "./components/Dashboard";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' errorElement={<ErrorPage/>} element={<Root/>} />
         <Route path="/Login" errorElement={<ErrorPage/>} element={<Login/>} />,
         <Route path="/register" errorElement={<ErrorPage/>} element={<Register/>} />
+        <Route path="/dashboard" errorElement={<ErrorPage/>} element={<Dashboard/>} />
 
       </Routes>
       </>
