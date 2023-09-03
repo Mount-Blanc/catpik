@@ -14,11 +14,10 @@ function Register() {
     e.preventDefault();
 
     if (username.length < 3 || password.length < 3) {
-      return;
+      console.log("not long enoguh")
     }
-
-    if (username.length > 20 || password.length < 20) {
-      return;
+    if (username.length > 20 || password.length > 20) {
+      console.log(username.length,"too long");
     }
 
     const userData = { username, password };

@@ -4,6 +4,19 @@ const users = [];
 
 exports.postRegister = (req, res, next) => {
   const { username, password } = req.body;
+
+  const validation = (req, res, next) => {
+    username.trim().isLength({ min: 3 }).escape(),
+      password.isLength({ min: 8 }).escape();
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    validation();
+    next();
+  };
+
   bcrypt.hash(password, 10, (err, hashedPassword) => {
     if (err) {
       console.error("Error hashing password:", err);
@@ -18,6 +31,18 @@ exports.postRegister = (req, res, next) => {
 
 exports.login = (req, res) => {
   const { username, password } = req.body;
+
+  const validation = (req, res, next) => {
+    username.trim().isLength({ min: 3 }).escape(),
+      password.isLength({ min: 8 }).escape();
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    validation();
+    next();
+  };
 
   console.log("Received username:", username);
 
