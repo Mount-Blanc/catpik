@@ -9,8 +9,8 @@ exports.postRegister = (req, res, next) => {
       console.error("Error hashing password:", err);
       return;
     }
-    users.push({ username, password: hashedPassword });  console.log(users);
-
+    users.push({ username, password: hashedPassword });
+    console.log(users);
   });
 
   res.json({ message: "User Registered Successfully" });
@@ -20,7 +20,7 @@ exports.login = (req, res) => {
   const { username, password } = req.body;
 
   console.log("Received username:", username);
-  
+
   const user = users.find((user) => user.username === username);
   console.log("Found array:", users);
 
