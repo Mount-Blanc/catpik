@@ -13,6 +13,14 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (username.length < 3 || password.length < 3) {
+      return;
+    }
+
+    if (username.length > 20 || password.length < 20) {
+      return;
+    }
+
     const userData = { username, password };
     console.log(userData);
     try {

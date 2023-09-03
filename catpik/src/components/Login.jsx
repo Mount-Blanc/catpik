@@ -13,6 +13,14 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (username.length < 3 || password.length < 3) {
+      return;
+    }
+
+    if (username.length > 20 || password.length < 20) {
+      return;
+    }
+
     const userData = { username, password };
 
     try {
@@ -21,7 +29,7 @@ function Login() {
         userData
       );
       console.log("Response:", response);
-      navigate('/dashboard', { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (error) {
       console.error("Error:", error);
     }
