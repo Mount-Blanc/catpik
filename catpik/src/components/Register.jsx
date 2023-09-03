@@ -18,6 +18,8 @@ const navigate = useNavigate();
     try {
       const response = await axios.post('http://localhost:3000/register', userData);
       console.log('Response:', response);
+      navigate('/dashboard', { replace: true });
+
     } catch (error) {
       console.error('Error:', error);
     }
@@ -33,9 +35,7 @@ const navigate = useNavigate();
     setpassword(e.target.value)
   };
 
-  const handleRedirect= () => {
-    navigate('/dashboard', { replace: true });
-    }
+
 
   return (
     <div className="form-container">
@@ -47,7 +47,7 @@ const navigate = useNavigate();
           <label htmlFor="password">Password</label>
           <input onChange={handlePasswordChange} id="password" placeholder="Choose Password..." />
 
-          <button onClick={handleRedirect} type="submit">Register</button>
+          <button  type="submit">Register</button>
         </div>
       </form>
     </div>
