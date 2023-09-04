@@ -34,10 +34,7 @@ app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
 app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: true }));
 
 // Routes
-app.use('/', authRoute);
-app.post('/register', authController.postRegister);
-app.get('/logout', authController.logout);
-app.post('/login', authController.login);
+app.use('/', authRoute); // Use the auth route module
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

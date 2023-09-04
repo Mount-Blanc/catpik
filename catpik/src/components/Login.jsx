@@ -17,7 +17,7 @@ function Login() {
       return;
     }
 
-    if (username.length > 20 || password.length < 20) {
+    if (username.length > 20 || password.length > 20) {
       return;
     }
 
