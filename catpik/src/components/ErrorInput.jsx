@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './ErrorInput.jsx'
 function ErrorInput() {
   return (
-    <div>ErrorInput</div>
+    <div className='container'>ErrorInput</div>
   )
 }
 

@@ -3,21 +3,29 @@ import "./Form.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ErrorInput from "./ErrorInput";
 
 function Register() {
   const [username, setusername] = useState();
   const [password, setpassword] = useState();
-
+  const [error, seterror] = useState();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (username.length < 3 || password.length < 3) {
-      console.log("not long enoguh")
+      console.log("not long enoguh");
+      return seterror(
+        "The username is too short. Please use a longer username"
+      );
     }
-    if (username.length > 20 || password.length > 20) {
-      console.log(username.length,"too long");
+
+
+    if ( username.length > 20 || password.length > 20 ){
+      return seterror(
+        "The password is too short. Please use a longer password"
+      );
     }
 
     const userData = { username, password };
@@ -52,7 +60,7 @@ function Register() {
             id="username"
             placeholder="Choose Username..."
           />
-
+          {error && <div className="error">{error}</div>}
           <label htmlFor="password">Password</label>
           <input
             onChange={handlePasswordChange}
