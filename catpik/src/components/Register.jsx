@@ -8,21 +8,26 @@ import ErrorInput from "./ErrorInput";
 function Register() {
   const [username, setusername] = useState();
   const [password, setpassword] = useState();
-  const [error, seterror] = useState();
+  const [usernameError, setusernameError] = useState();
+  const [passwordError, setpasswordError] = useState();
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (username.length < 3 || password.length < 3) {
-      console.log("not long enoguh");
-      return seterror(
+    if (username.length < 3) {
+      return setusernameError(
         "The username is too short. Please use a longer username"
+      );
+    } else if ( password.length < 3) {
+      return setpasswordError(
+        "The password is too short. Please use a longer password"
       );
     }
 
     if (username.length > 20 || password.length > 20) {
-      return seterror(
+      return setusername(
         "The password is too short. Please use a longer password"
       );
     }
@@ -58,18 +63,18 @@ function Register() {
             onChange={handleUsernameChange}
             id="username"
             placeholder="Choose Username..."
-            className={error ? "errorInput" : ""}
+            className={usernameError ? "errorInput" : ""}
           />
 
-          {error && <div className="error">{error}</div>}
+          {usernameError && <div className="error">{usernameError}</div>}
           <label htmlFor="password">Password</label>
           <input
             onChange={handlePasswordChange}
             id="password"
             placeholder="Choose Password..."
-            className={error ? "errorInput" : ""}
+            className={passwordError ? "errorInput" : ""}
           />
-          {error && <div className="error">{error}</div>}
+          {passwordError && <div className="error">{passwordError}</div>}
           <button type="submit">Register</button>
         </div>
       </form>
