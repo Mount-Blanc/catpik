@@ -32,3 +32,13 @@ button:hover {
     height:100%
 
 }
+
+.error {
+    color: #b70303;
+}
+
+
+.errorInput {
+    color: #b70303;
+    background-color: rgba(255, 0, 0, 0.3);
+}

@@ -21,8 +21,7 @@ function Register() {
       );
     }
 
-
-    if ( username.length > 20 || password.length > 20 ){
+    if (username.length > 20 || password.length > 20) {
       return seterror(
         "The password is too short. Please use a longer password"
       );
@@ -59,15 +58,18 @@ function Register() {
             onChange={handleUsernameChange}
             id="username"
             placeholder="Choose Username..."
+            className={error ? "errorInput" : ""}
           />
+
           {error && <div className="error">{error}</div>}
           <label htmlFor="password">Password</label>
           <input
             onChange={handlePasswordChange}
             id="password"
             placeholder="Choose Password..."
+            className={error ? "errorInput" : ""}
           />
-
+          {error && <div className="error">{error}</div>}
           <button type="submit">Register</button>
         </div>
       </form>
