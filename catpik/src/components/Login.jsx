@@ -3,23 +3,32 @@ import "./Form.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import ErrorInput from "./ErrorInput";
 
 function Login() {
   const [username, setusername] = useState();
   const [password, setpassword] = useState();
+  const [usernameError, setusernameError] = useState();
+  const [passwordError, setpasswordError] = useState();
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (username.length < 3 || password.length < 3) {
-      return;
+    if (username.length < 3) {
+      return setusernameError(
+        "The username is too short. Please use a longer username"
+      );
+    } else if (password.length < 3) {
+      return setpasswordError(
+        "The password is too short. Please use a longer password"
+      );
     }
 
     if (username.length > 20 || password.length > 20) {
-      return;
+      return setusername(
+        "The password is too short. Please use a longer password"
+      );
     }
 
     const userData = { username, password };
@@ -53,7 +62,9 @@ function Login() {
             value={username}
             id="username"
             placeholder="Enter Username"
+            className={usernameError ? "errorInput" : ""}
           />
+          {usernameError && <div className="error">{usernameError}</div>}
 
           <label htmlFor="password">Password</label>
           <input
@@ -61,7 +72,9 @@ function Login() {
             value={password}
             id="password"
             placeholder="Enter Password"
+            className={usernameError ? "errorInput" : ""}
           />
+          {passwordError && <div className="error">{passwordError}</div>}
 
           <button type="submit">Login</button>
         </div>
